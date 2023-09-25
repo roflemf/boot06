@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+ <title></title>
+  <meta http-equiv="Content-Type" , content="text/html;charset=UTF-8" />
+</head>
+<body>
+
+ <!--/* th: inline="javascript" 사용해 <script>내에서 타임리프를 이용가능하게 함*/-->
+ <script th:inline="javascript"> 
+   var data= [[${result}]];
+   alert(data);
+ </script>
+ 
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+ <title></title>
+ <meta http-equiv="Content-Type" , content="text/html;charset=UTF-8" />
+</head>
+<body>
+ <table border="1" th:with="target='u0001'">
+ <!--/* th:with ; 특정 범위 내에서만 유효한 지역변수를 선언 가능
+ 		target이라는 지역변수 선언. 이 변수는 table 태그 내에서만 유효*/-->
+
+  <tr>
+   <th>회원아이디</th> <th>회원이름</th> <th>가입날짜</th>
+  </tr>
+  
+  <tr th:each="member:${list}">
+   <th th:text="${member.mid == target?'SECRET':member.mid}"></th>
+    <!--/* 삼항 조건 연산자 사용 ; target 맞을때 secret; 아닐때는 mid 표시 */-->
+   <th th:text="${member.mname}" ></th>
+   <th th:text="${#dates.format(member.regdate,'yyyy년 MM월 dd일' )}"></th>
+  </tr>
+   </table>
+   
+   <hr>
+   
+   <table border="1" th:with="target2='u0001'">
+    <tr>
+     <th>회원아이디</th> <th>회원이름</th> <th>가입날짜</th>
+    </tr>
+   
+   <tr th:each="member:${list}">
+    <th th:if="${member.mid}">
+     <a href="/modify" th:if="${member.mid == target2}">회원정보수정</a>   
+     <!--/* 회원아이디가 'u0001'과 같다면,
+     		th:if ~ th:unless 타임리프는 자바의 if else 문과 같다*/-->
+     <p th:unless="${member.mid ==target2}">회원정보 보기</p>
+     <!--/* 회원 아이디가 'u0001'이 아니라면*/-->
+     </th>
+     
+     <th th:text="${member.mname}"></th>
+     <th th:text="${#dates.format(member.regdate,'YYYY년 MM월 DD일')}"></th>
+   </table>
+</body>
+</html>

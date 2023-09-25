@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" >
+ <head>
+  <title>Thymeleaf</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+ </head>
+ <body>
+  <h1 th:text="${cont_title}"></h1>
+  <hr>
+  
+  <ul>
+   <li th:each="data: ${list}" th:text="${data}"></li>
+   <!--/* 타임리프 주석문 */-->
+   <!--/*--> list키이름의 컬렉션 복수개의 목록을 data로 가져와서 출력 <!--*/-->
+  </ul>
+ </body>
+</html>

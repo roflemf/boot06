@@ -1,0 +1,20 @@
+<html xmlns:th="http://www.thymeleaf.org">
+ <head>
+  <title>ThymeLeaf</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+  <link rel = "stylesheet" type="text/css" href="./css/th.css" />
+ </head>
+ <body>
+  <h1>ThymeLeaf 연습 페이지</h1>
+  <H2 class="thmeLeaf_css" th:text="${greeting}" ></H2>
+  <!-- /* ${greeting}은 SampleController.java에서 설정한 키이름인 greeting을 참조해 값을 가져옴 */ -->
+  <hr>
+  
+  <h3>맛난 복숭아</h3>
+  <img src="./images01/fruit01.jpg" width="200px" height="150px" alt="복숭아" />
+  
+  <h3>맛난 배</h3>
+  <img src="./images02/fruit02.jpg" width="250px" height="200px" alt="맛난배입니다" />
+  
+ </body>
+</html>
